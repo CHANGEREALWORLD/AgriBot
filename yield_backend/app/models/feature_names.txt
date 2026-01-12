@@ -1,0 +1,10 @@
+Moisture
+rainfall
+Average_Humidity
+Mean_Temp
+max_Temp
+Min_temp
+alkaline
+sandy
+chalky
+clay

@@ -1,0 +1,359 @@
+/* ===============================================
+   YIELD PREDICTION PAGE - YieldPredict.css
+   Save this as: src/styles/YieldPredict.css
+   =============================================== */
+
+/* ================= PAGE HEADER ================= */
+.yield-predict-page h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.yield-predict-page h2::before {
+  content: '📊';
+  font-size: 36px;
+}
+
+/* ================= MAIN GRID LAYOUT ================= */
+.yield-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ================= FORM CARD ================= */
+.yield-form-card {
+  position: sticky;
+  top: 24px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 20px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: #2e7d32;
+  border-radius: 2px;
+}
+
+/* ================= FORM STYLING ================= */
+.yield-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.yield-form .row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.yield-form .row:has(input[name="potassium"]) {
+  grid-template-columns: 1fr;
+}
+
+/* ================= INPUTS & SELECTS ================= */
+.yield-form input,
+.yield-form select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #fff;
+  color: #1a1a1a;
+}
+
+.yield-form input:hover,
+.yield-form select:hover {
+  border-color: #d1d5db;
+}
+
+.yield-form input:focus,
+.yield-form select:focus {
+  outline: none;
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1);
+}
+
+.yield-form input::placeholder {
+  color: #9ca3af;
+}
+
+/* ================= SELECT DROPDOWN ================= */
+.yield-form select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%232e7d32' d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 44px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.yield-form select option[value=""] {
+  color: #9ca3af;
+}
+
+/* ================= ERROR BOX ================= */
+.error-box {
+  padding: 12px 16px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  color: #dc2626;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: shake 0.3s ease-in-out;
+}
+
+.error-box::before {
+  content: '⚠️';
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* ================= BUTTONS ================= */
+.yield-form .btn {
+  flex: 1;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.yield-form .btn[type="submit"] {
+  background: linear-gradient(135deg, #2e7d32 0%, #145a32 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+}
+
+.yield-form .btn[type="submit"]:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.3);
+}
+
+.yield-form .btn[type="submit"]:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.yield-form .btn.secondary {
+  background: #f3f4f6;
+  color: #374151;
+  border: 2px solid #e5e7eb;
+}
+
+.yield-form .btn.secondary:hover:not(:disabled) {
+  background: #e5e7eb;
+  border-color: #d1d5db;
+}
+
+.yield-form .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================= RESULT CARD ================= */
+.yield-result-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  border: 2px solid #e5e7eb;
+  min-height: 400px;
+}
+
+.yield-result-card hr {
+  border: none;
+  border-top: 2px solid #e5e7eb;
+  margin: 20px 0;
+}
+
+.yield-result-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+/* ================= PLACEHOLDER TEXT ================= */
+.placeholder-text {
+  color: #9ca3af;
+  text-align: center;
+  padding: 32px 16px;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* ================= RESULT VALUE ================= */
+.result-value {
+  font-size: 48px;
+  font-weight: 800;
+  color: #2e7d32;
+  margin: 24px 0 8px 0;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  animation: scaleIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.result-value + p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* ================= HISTORY LIST ================= */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Custom scrollbar */
+.history-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.history-list::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* ================= HISTORY ITEM ================= */
+.history-item {
+  padding: 12px 16px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.history-item:hover {
+  border-color: #2e7d32;
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.1);
+  transform: translateX(-2px);
+}
+
+.history-item strong {
+  font-size: 16px;
+  color: #2e7d32;
+  font-weight: 700;
+}
+
+.history-item .muted {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* ================= UTILITY CLASSES ================= */
+.muted {
+  color: #6b7280;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .yield-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yield-form-card {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .yield-predict-page h2 {
+    font-size: 24px;
+  }
+
+  .yield-predict-page h2::before {
+    font-size: 28px;
+  }
+
+  .yield-form .row {
+    grid-template-columns: 1fr;
+  }
+
+  .result-value {
+    font-size: 36px;
+  }
+
+  .history-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}

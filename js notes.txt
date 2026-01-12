@@ -1,0 +1,60 @@
+Use the let keyword to declare a variable called bot.
+
+NOTE: You are using let here because later on in the workshop, you will be changing the value of the bot variable.
+
+When you need to declare variables with multiple words, you can use the camelCase naming convention.
+
+When using camelCase, the first word is all lowercase and the first letter of each subsequent word is capitalized.
+
+
+What Is Dynamic Typing in JavaScript, and How Does It Differ from Statically Typed Languages?
+JavaScript is a dynamically typed language, meaning you don't need to specify the data type of a variable when you declare it. Instead, the type is determined based on the value assigned to the variable while the program is running. This allows you to change the type of a variable throughout the program.
+
+The difference between dynamic typing and static typing lies in the flexibility vs. the safety of your code. Dynamically typed languages offer flexibility but at the cost of potential runtime errors.
+
+Statically typed languages enforce stricter rules that can prevent certain errors, but they require more upfront declaration and offer less flexibility in changing types.
+
+
+
+Undefined and Null: An undefined value is a variable that has been declared but not assigned a value. A null value is an empty value, or a variable that has intentionally been assigned a value of null.
+
+
+Symbol: The Symbol data type is a unique and immutable value that may be used as an identifier for object properties.
+In this example below, two symbols are created with the same description, but they are not equal.
+
+Example Code
+const crypticKey1= Symbol("saltNpepper");
+const crypticKey2= Symbol("saltNpepper");
+console.log(crypticKey1 === crypticKey2); // false
+
+
+BigInt: When the number is too large for the Number data type, you can use the BigInt data type to represent integers of arbitrary length.
+By adding an n to the end of the number, you can create a BigInt.
+
+However, there's a well-known quirk in JavaScript when it comes to null. The typeof operator returns "object" for null values.
+
+
+In many programming languages, including JavaScript, you can create a newline in a string using a special character called an escape sequence. The most common escape sequence for newlines is \n.
+
+
+template literals are defined with backticks (`).
+template literals is that they allow you to embed JavaScript expressions directly within the string.
+Template literals are particularly useful when you need to include variables or expressions in strings, format complex strings, or work with multiline text. They are more concise and readable compared to traditional string concatenation.
+const song = "Bohemian Rhapsody";
+const score = 9.5;
+const highestScore = 10;
+const output = `One of my favorite songs is "${song}". I rated it ${
+  (score / highestScore) * 100
+}%.`;
+console.log(output); 
+Which of the following is a feature of template literals that makes them better suited for writing multiline strings compared to regular strings?
+Template literals preserve line breaks without needing escape characters.
+
+
+string manipulation, including embedding variables directly inside a string, a feature known as string interpolation.
+String interpolation allows you to embed variables and expressions inside a string. This is a significant improvement over the older method, where you would concatenate strings and variables using the + operator.
+
+How can you use indexOf to search for a substring starting at a specific position within the string? By using the second argument to specify the starting position. 
+indexOf is case sensitive
+
+
