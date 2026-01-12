@@ -1,95 +1,4 @@
-// // src/App.jsx
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Dashboard from "./pages/Dashboard";
-// import CropRecommend from "./pages/CropRecommend";
-// import YieldPredict from "./pages/YieldPredict";
-// import SoilInput from "./pages/SoilInput";
-// import Login from "./pages/Login";
-// import Profile from "./pages/Profile";
-// import Signup from "./pages/Signup";
-// import ForgotPassword from "./pages/ForgotPassword";
-
-
-// export default function App() {
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route path="/" element={<Dashboard />} />
-//         <Route path="/crop" element={<CropRecommend />} />
-//         <Route path="/yield" element={<YieldPredict />} />
-//         <Route path="/soil" element={<SoilInput />} />
-//         <Route path="/login" element={<Login />} />
-//         <Route path="/profile" element={<Profile />} />
-//         <Route path="/signup" element={<Signup />} />
-//         <Route path="/forgot-password" element={<ForgotPassword />} />
-
-
-//       </Routes>
-
-//     </Router>
-//   );
-// }
-
-
-
-// src/App.jsx
-// import { Routes, Route } from "react-router-dom";
-
-// import Dashboard from "./pages/Dashboard";
-// import AuthRedirect from "./components/AuthRedirect";
-// import ProtectedRoute from "./components/ProtectedRoute";
-
-// import CropRecommend from "./pages/CropRecommend";
-// import YieldPredict from "./pages/YieldPredict";
-// import SoilInput from "./pages/SoilInput";
-// import Login from "./pages/Login";
-// import Profile from "./pages/Profile";
-// import Signup from "./pages/Signup";
-// import ForgotPassword from "./pages/ForgotPassword";
-// import SoilHealth from "./pages/SoilHealth";
-// import DiseaseDetect from "./pages/DiseaseDetect";
-// import DiseaseHistory from "./pages/DiseaseHistory";
-// // import Weather from "./pages/Weather";
-
-// export default function App() {
-//   return (
-//     <Routes>
-//       <Route path="/" element={<Dashboard />} />
-
-//       <Route path="/crop" element={<CropRecommend />} />
-//       <Route path="/yield" element={<YieldPredict />} />
-//       {/* <Route path="/soil" element={<SoilInput />} /> */}
-//       <Route path="/soil-health" element={<SoilHealth />} />
-
-//       <Route path="/login" element={<Login />} />
-//       <Route path="/profile" element={<Profile />} />
-//       <Route path="/signup" element={<Signup />} />
-//       <Route path="/forgot-password" element={<ForgotPassword />} />
-//       <Route path="/disease" element={<DiseaseDetect />} />
-//       <Route path="/disease/history" element={<DiseaseHistory />} />
-//       {/* <Route path="/weather" element={<Weather />} /> */}
-
-
-      
-//       <Route path="/disease" element={<DiseaseDetect />} />
-//       <Route
-//   path="/login" element={<AuthRedirect><Login /></AuthRedirect>}/>
-
-// <Route
-//   path="/signup"
-//   element={
-//     <AuthRedirect><Signup /></AuthRedirect>}/>
-
-// <Route
-//   path="/"element={<ProtectedRoute><Profile /></ProtectedRoute>}/>
-// </Routes>
-//   );
-// }
-
-
-
 import { Routes, Route, Navigate } from "react-router-dom";
-
 import Dashboard from "./pages/Dashboard.jsx";
 import CropRecommend from "./pages/CropRecommend";
 import YieldPredict from "./pages/YieldPredict";
@@ -98,7 +7,7 @@ import DiseaseDetect from "./pages/DiseaseDetect";
 import Weather from "./pages/Weather";
 import DiseaseHistory from "./pages/DiseaseHistory";
 import Profile from "./pages/Profile";
-//  import Profile from "./pages/Profile";
+
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -110,7 +19,7 @@ export default function App() {
   return (
     <Routes>
 
-      {/* ---------- PUBLIC ROUTES ---------- */}
+      {/* PUBLIC ROUTES */}
       <Route
         path="/login"
         element={
@@ -131,7 +40,7 @@ export default function App() {
 
       <Route path="/forgot-password" element={<ForgotPassword />} />
 
-      {/* ---------- PROTECTED ROUTES ---------- */}
+      {/*  PROTECTED ROUTES  */}
       <Route
         path="/"
         element={
@@ -203,7 +112,7 @@ export default function App() {
 />
 
 
-      {/* ---------- FALLBACK ---------- */}
+      {/*  FALLBACK  */}
       <Route path="*" element={<Navigate to="/" />} />
 
     </Routes>
