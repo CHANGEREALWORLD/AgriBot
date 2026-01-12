@@ -10,7 +10,7 @@ The project focuses on improving crop yield and reducing agricultural risk throu
 - Promote smart and sustainable agriculture  
 - Demonstrate practical application of machine learning  
 
-#Features
+##Features
 
 - Crop recommendation based on:
 -  Machine Learning model trained on agricultural data
