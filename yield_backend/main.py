@@ -32,10 +32,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
     )
-    
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
-    app.run(host="0.0.0.0", port=port)
 
 # Register routers
 app.include_router(yield_router)
@@ -47,5 +43,9 @@ app.include_router(soil_router)
 app.include_router(disease_router)
 app.include_router(weather_router)
 app.include_router(dashboard_router)
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    app.run(host="0.0.0.0", port=port)
 
 
