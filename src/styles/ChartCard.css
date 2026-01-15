@@ -1,0 +1,252 @@
+/* ChartCard Component Styles */
+
+/* Chart Card Container */
+.chart-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fdf9 100%);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(76, 175, 80, 0.1);
+  position: relative;
+}
+
+.chart-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Chart Header with Stats */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Card Title */
+.chart-card .card-title {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chart-card .card-title::before {
+  content: "📊";
+  font-size: 24px;
+}
+
+/* Chart Stats */
+.chart-stats {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  min-width: 60px;
+  transition: all 0.2s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.stat-item strong {
+  font-size: 16px;
+  color: #2c3e50;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.stat-item small {
+  font-size: 11px;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.stat-item.trend strong {
+  font-size: 20px;
+}
+
+.stat-item.trend.up strong {
+  color: #4caf50;
+}
+
+.stat-item.trend.down strong {
+  color: #f44336;
+}
+
+/* Chart Container */
+.chart-container {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* Chart Canvas Wrapper */
+.chart-card canvas {
+  border-radius: 8px;
+}
+
+/* Loading State for Chart */
+.chart-card.loading {
+  pointer-events: none;
+}
+
+.chart-card.loading .chart-container::after {
+  content: "Loading chart...";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  color: #4caf50;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chart-card {
+    padding: 18px;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chart-stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .stat-item {
+    min-width: auto;
+    flex: 1;
+    padding: 6px 8px;
+  }
+
+  .stat-item strong {
+    font-size: 14px;
+  }
+
+  .stat-item small {
+    font-size: 10px;
+  }
+
+  .chart-card .card-title {
+    font-size: 18px;
+  }
+
+  .chart-container {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-card {
+    padding: 16px;
+  }
+
+  .chart-card .card-title {
+    font-size: 16px;
+  }
+
+  .chart-card .card-title::before {
+    font-size: 20px;
+  }
+
+  .chart-stats {
+    gap: 8px;
+  }
+
+  .stat-item {
+    padding: 4px 6px;
+  }
+
+  .stat-item strong {
+    font-size: 13px;
+  }
+
+  .stat-item.trend strong {
+    font-size: 16px;
+  }
+}
+
+/* Dark Mode Support (Optional) */
+@media (prefers-color-scheme: dark) {
+  .chart-card {
+    background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+    border-color: rgba(76, 175, 80, 0.2);
+  }
+
+  .chart-card .card-title {
+    color: #e0e0e0;
+  }
+
+  .chart-container {
+    background: #2a2a2a;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .stat-item {
+    background: #2a2a2a;
+  }
+
+  .stat-item strong {
+    color: #e0e0e0;
+  }
+
+  .stat-item small {
+    color: #9e9e9e;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .chart-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    page-break-inside: avoid;
+  }
+
+  .chart-card:hover {
+    transform: none;
+  }
+
+  .chart-stats {
+    display: flex;
+  }
+}
