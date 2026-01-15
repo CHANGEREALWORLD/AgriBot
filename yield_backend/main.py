@@ -1,7 +1,6 @@
 import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-# from fastapi.staticfiles import StaticFiles
 
 # Routers
 from app.routers.yield_router import router as yield_router
@@ -15,16 +14,6 @@ from app.routers.dashboard_router import router as dashboard_router
 
 app = FastAPI(title="AgriBot Backend")
 
-# CORS for React frontend
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=[
-#         "http://localhost:3000",
-#         "http://127.0.0.1:3000",
-#     ],
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
 app.add_middleware( 
     CORSMiddleware,
     allow_origins=["*"],
@@ -39,7 +28,6 @@ app.include_router(crop_router)
 app.include_router(google_router)
 app.include_router(profile_router)
 app.include_router(soil_router)
-# app.mount("/app/uploads", StaticFiles(directory="app/uploads"), name="uploads")
 app.include_router(disease_router)
 app.include_router(weather_router)
 app.include_router(dashboard_router)
