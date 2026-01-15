@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import "./sidebar.css";
+
 
 export default function Sidebar() {
   return (
@@ -11,7 +13,7 @@ export default function Sidebar() {
 
       {/* Navigation */}
       <nav className="sidebar-nav">
-        <NavLink to="/" end className={({ isActive})=> isActive ? "nav-item active" : "nav-item"}>
+        <NavLink to="/Dashboard" end className={({ isActive})=> isActive ? "nav-item active" : "nav-item"}>
           <span className="icon">📊</span>
           <span>Dashboard</span>
         </NavLink>

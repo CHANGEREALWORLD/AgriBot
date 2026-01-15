@@ -13,20 +13,17 @@
 //   return children;
 // }
 
+import { Navigate } from "react-router-dom";
 
-import { Outlet } from "react-router-dom";
-import Layout from "./Layout";
+export default function ProtectedRoute({ children }) {
+  const user = localStorage.getItem("user");
+  const token = localStorage.getItem("token");
 
-export default function ProtectedLayout() {
-  const isAuthenticated = localStorage.getItem("token"); // or Firebase auth
-
-  if (!isAuthenticated) {
+  // If not logged in, redirect to login
+  if (!user || !token) {
     return <Navigate to="/login" replace />;
   }
 
-  return (
-    <Layout>
-      <Outlet />
-    </Layout>
-  );
+  // If logged in, allow access
+  return children;
 }
