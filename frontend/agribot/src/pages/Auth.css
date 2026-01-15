@@ -1,0 +1,125 @@
+/* Background similar to dashboard */
+.auth-bg {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #eaf7ee, #f6fffa);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center wrapper */
+.auth-wrapper {
+  width: 380px;
+}
+
+/* Glassmorphism card */
+.auth-box {
+  padding: 30px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.4s ease;
+}
+
+.auth-box h2 {
+  margin: 0 0 8px 0;
+  text-align: center;
+  color: #234f2d;
+}
+
+.sub {
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c8decf;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.auth-form input:focus {
+  border-color: #357e45;
+  outline: none;
+}
+
+/* Terms checkbox */
+.terms {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.terms a {
+  color: #307a39;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-error {
+  background: #ffe0e0;
+  padding: 10px;
+  border-radius: 6px;
+  color: #b70000;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Buttons */
+.btn-green {
+  width: 100%;
+  padding: 12px;
+  background: #3a8f45;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.btn-green:hover {
+  background: #327b3d;
+}
+
+/* Google button */
+.google-signin {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dcdcdc;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.google-signin:hover {
+  background: #f7f7f7;
+}
+
+.divider {
+  text-align: center;
+  color: #aaa;
+  margin: 18px 0;
+}
+
+.switch {
+  text-align: center;
+  font-size: 14px;
+}
+
+.fadeIn {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px);}
+  to { opacity: 1; transform: translateY(0);}
+}

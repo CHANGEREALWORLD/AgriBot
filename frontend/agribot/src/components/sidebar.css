@@ -1,0 +1,109 @@
+ /* Kill default link colors */
+.sidebar a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Sidebar container */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f3d2e, #145a32);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 18px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-top-right-radius: 22px;
+  border-bottom-right-radius: 22px; 
+}
+/* Brand */
+ .sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.logo-box {
+  width: 46px;
+  height: 46px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.brand-text {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+} */
+
+/* Nav container — THIS centers the menu */
+ .sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;  
+
+} 
+
+/* Nav item */
+ .nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-size: 25px;           
+   font-weight: 500;
+  color: #ffffff;
+  position: relative;
+  transition: background 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+}  
+
+/* Icon */
+.nav-item .icon {
+  font-size: 20px;
+  min-width: 22px;
+} 
+
+/* Hover */
+ .nav-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(2px);
+} 
+
+/* Active */
+ .nav-item.active {
+  background: rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+} 
+
+/* Active indicator */
+ .nav-item.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12%;
+  height: 76%;
+  width: 4px;
+  background: #86efac;
+  border-radius: 4px;
+} 
+
+/* Footer */
+.sidebar-footer {
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 24px;
+}  
+
