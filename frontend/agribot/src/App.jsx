@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Dashboard from "./pages/Dashboard.jsx";
+import Dashboard from "./pages/Dashboard";
 import CropRecommend from "./pages/CropRecommend";
 import YieldPredict from "./pages/YieldPredict";
 import SoilHealth from "./pages/SoilHealth";
@@ -14,17 +14,21 @@ import ForgotPassword from "./pages/ForgotPassword";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 import AuthRedirect from "./components/AuthRedirect";
+import Layout from "./layout/Layout";
+
+
 
 export default function App() {
   return (
     <Routes>
 
       {/* PUBLIC ROUTES */}
+       <Route element={<ProtectedRoute><Layout /></ProtectedRoute>}></Route>
       <Route
         path="/login"
         element={
           <AuthRedirect>
-            <Login />
+            <Login />a
           </AuthRedirect>
         }
       />
