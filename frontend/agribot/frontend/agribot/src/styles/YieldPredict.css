@@ -100,7 +100,8 @@
 /*  SELECT DROPDOWN */
 .yield-form select {
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%232e7d32' d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsPSIjMmU3ZDMyIiBkPSJNOCwxMUwzLDZoMTB6Ii8+PC9zdmc+");
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%232e7d32' d='M8 11L3 6h10z'/%3E%3C/svg%3E"); */
   background-repeat: no-repeat;
   background-position: right 16px center;
   background-size: 16px;
