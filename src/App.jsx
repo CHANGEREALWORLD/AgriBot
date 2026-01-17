@@ -40,11 +40,11 @@ export default function App() {
       />
 
       <Route path="/forgot-password" element={<ForgotPassword />} />
-       <Route path="/" element={<Layout />}></Route>
+       <Route path="/Layout" element={<Layout />}></Route>
 
       {/*  PROTECTED ROUTES  */}
       <Route
-        path="/"
+        path="/Dashboard"
         element={
           <ProtectedRoute>
             <Dashboard />
