@@ -1,32 +1,29 @@
+import { Navigate } from "react-router-dom";
+
+export default function ProtectedRoute({ children }) {
+  const user = localStorage.getItem("user");
+  const token = localStorage.getItem("token");
+
+  // Not logged in kick to login
+  if (!user || !token) {
+    return <Navigate to="/login" replace />;
+  }
+
+  // Logged in allow page
+  return children;
+}
+
 // import { Navigate } from "react-router-dom";
 
 // export default function ProtectedRoute({ children }) {
 //   const user = localStorage.getItem("user");
 //   const token = localStorage.getItem("token");
 
-//   // Not logged in kick to login
+//   // If not logged in, redirect to login
 //   if (!user || !token) {
 //     return <Navigate to="/login" replace />;
 //   }
 
-//   // Logged in allow page
+//   // If logged in, allow access
 //   return children;
 // }
-
-
-import { Outlet } from "react-router-dom";
-import Layout from "./Layout";
-
-export default function ProtectedLayout() {
-  const isAuthenticated = localStorage.getItem("token"); // or Firebase auth
-
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
-  }
-
-  return (
-    <Layout>
-      <Outlet />
-    </Layout>
-  );
-}

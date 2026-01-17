@@ -7,6 +7,7 @@ import DiseaseDetect from "./pages/DiseaseDetect";
 import Weather from "./pages/Weather";
 import DiseaseHistory from "./pages/DiseaseHistory";
 import Profile from "./pages/Profile";
+import Layout from "../layout/Layout";
 
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -39,6 +40,7 @@ export default function App() {
       />
 
       <Route path="/forgot-password" element={<ForgotPassword />} />
+       <Route path="/" element={<Layout />}></Route>
 
       {/*  PROTECTED ROUTES  */}
       <Route
