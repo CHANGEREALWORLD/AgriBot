@@ -139,7 +139,7 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 // import ForgotPassword from "./pages/ForgotPassword";
-import ForgotPassword from "./pages/ForgotPassword";
+import ForgotPassword from "./pages/ForgotPassword.jsx";
 
 
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -173,12 +173,9 @@ export default function App() {
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
 
       {/* PROTECTED ROUTES WITH LAYOUT */}
-      <Route
-        element={
-          <ProtectedRoute>
-            <Layout />
-          </ProtectedRoute>
-        }
+      <Route path="/Layout" element={
+        <Layout />
+          }
       >
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
