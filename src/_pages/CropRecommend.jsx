@@ -36,7 +36,7 @@ export default function CropRecommend() {
         temperature: Number(form.temperature),
       };
 
-      const res = await post("/crop/recommend", payload);
+      const res = await post("/croprecommend", payload);
       setResult(res);
     } catch (err) {
       setError("Failed to fetch recommendation");

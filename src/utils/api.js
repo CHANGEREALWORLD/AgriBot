@@ -6,7 +6,7 @@ export async function post(path, body) {
   const res = await fetch(BASE_URL + path, {
     method: "POST",
     headers: isFormData
-      ? {} // browser sets multipart boundary automatically
+      ? {} 
       : { "Content-Type": "application/json" },
     body: isFormData ? body : JSON.stringify(body),
   });
