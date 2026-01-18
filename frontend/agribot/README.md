@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,47 +68,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-## AgriBot 
-**Smart Crop Recommendation System using Machine Learning**
-
-AgriBot is a machine learning–based web application designed to assist farmers and agricultural decision-makers in selecting the most suitable crop based on soil and environmental conditions.  
-The project focuses on improving crop yield and reducing agricultural risk through data-driven recommendations.
-
-##  Project Objectives
-- Assist farmers in crop selection  
-- Reduce crop failure risks  
-- Promote smart and sustainable agriculture  
-- Demonstrate practical application of machine learning  
-
-##Features
-
-- Crop recommendation based on:
--  Machine Learning model trained on agricultural data
--  Simple and user-friendly web interface
--  Fast and accurate predictions
--  Practical real-world use case
-
-##  How It Works
-
-1. User enters soil and climate parameters  
-2. Trained ML model processes the input  
-3. System predicts the most suitable crop  
-4. Result is displayed on the web interface  
-
-## Machine Learning
-- Python
-- Scikit-learn
-- Pandas
-- NumPy
-
-### Web Development
-- React.js
-- Flask (Backend API)
- 
-##  Dataset Information
-The data was preprocessed and used to train a supervised machine learning model for accurate crop prediction.
-
-
-
->>>>>>> ba48e17726fbc67008d51e3d55cad9e99e50ec41
