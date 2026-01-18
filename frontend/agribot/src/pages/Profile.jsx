@@ -856,10 +856,10 @@ import "../styles/Profile.css";
 
 export default function UserProfile() {
   const [userData, setUserData] = useState(null);
-  const [activities, setActivities] = useState([]);
+  // const [activities, setActivities] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState("overview");
-  const [filterType, setFilterType] = useState("all");
+  // const [activeTab, setActiveTab] = useState("overview");
+  // const [filterType, setFilterType] = useState("all");
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -871,7 +871,7 @@ export default function UserProfile() {
     irrigation: "",
     experience: "",
   });
-  const [imagePreview, setImagePreview] = useState(null);
+  // const [imagePreview, setImagePreview] = useState(null);
   const [saveLoading, setSaveLoading] = useState(false);
 
   const fetchUserData = useCallback(async () => {
