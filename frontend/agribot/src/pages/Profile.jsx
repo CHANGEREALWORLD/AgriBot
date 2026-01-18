@@ -849,6 +849,9 @@
 // }
 
 
+// 
+
+
 import { useState, useEffect, useCallback } from "react";
 import Layout from "../layout/Layout";
 import { post } from "../utils/api";
@@ -856,11 +859,10 @@ import "../styles/Profile.css";
 
 export default function UserProfile() {
   const [userData, setUserData] = useState(null);
-  // const [activities, setActivities] = useState([]);
   const [loading, setLoading] = useState(true);
-  // const [activeTab, setActiveTab] = useState("overview");
-  // const [filterType, setFilterType] = useState("all");
   const [isEditing, setIsEditing] = useState(false);
+  const [saveLoading, setSaveLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -871,8 +873,6 @@ export default function UserProfile() {
     irrigation: "",
     experience: "",
   });
-  // const [imagePreview, setImagePreview] = useState(null);
-  const [saveLoading, setSaveLoading] = useState(false);
 
   const fetchUserData = useCallback(async () => {
     setLoading(true);
@@ -880,15 +880,19 @@ export default function UserProfile() {
       const profile = await post("/user/profile");
       if (profile) {
         setUserData(profile);
-        updateFormData(profile);
+        setFormData({
+          name: profile.name || "",
+          email: profile.email || "",
+          profileImage: profile.profileImage || "",
+          farmSize: profile.farmDetails?.farmSize || "",
+          soilType: profile.farmDetails?.soilType || "",
+          primaryCrop: profile.farmDetails?.primaryCrop || "",
+          irrigation: profile.farmDetails?.irrigation || "",
+          experience: profile.farmDetails?.experience || "",
+        });
       }
-
-      const allActivities = await post("/user/activities");
-      if (Array.isArray(allActivities)) {
-        setActivities(allActivities);
-      }
-    } catch (e) {
-      console.error("Error fetching user data:", e);
+    } catch (err) {
+      console.error("Failed to load profile", err);
     } finally {
       setLoading(false);
     }
@@ -897,20 +901,6 @@ export default function UserProfile() {
   useEffect(() => {
     fetchUserData();
   }, [fetchUserData]);
-
-  function updateFormData(user) {
-    setFormData({
-      name: user.name || "",
-      email: user.email || "",
-      profileImage: user.profileImage || "",
-      farmSize: user.farmDetails?.farmSize || "",
-      soilType: user.farmDetails?.soilType || "",
-      primaryCrop: user.farmDetails?.primaryCrop || "",
-      irrigation: user.farmDetails?.irrigation || "",
-      experience: user.farmDetails?.experience || "",
-    });
-    setImagePreview(user.profileImage || null);
-  }
 
   function handleInputChange(e) {
     const { name, value } = e.target;
@@ -921,11 +911,6 @@ export default function UserProfile() {
     const file = e.target.files[0];
     if (!file) return;
 
-    if (file.size > 5 * 1024 * 1024) {
-      alert("Image size should be less than 5MB");
-      return;
-    }
-
     if (!file.type.startsWith("image/")) {
       alert("Please upload an image file");
       return;
@@ -933,7 +918,6 @@ export default function UserProfile() {
 
     const reader = new FileReader();
     reader.onloadend = () => {
-      setImagePreview(reader.result);
       setFormData(prev => ({ ...prev, profileImage: reader.result }));
     };
     reader.readAsDataURL(file);
@@ -942,7 +926,7 @@ export default function UserProfile() {
   async function handleSaveProfile() {
     setSaveLoading(true);
     try {
-      const profileData = {
+      await post("/user/update-profile", {
         name: formData.name,
         email: formData.email,
         profileImage: formData.profileImage,
@@ -953,34 +937,21 @@ export default function UserProfile() {
           irrigation: formData.irrigation,
           experience: formData.experience,
         },
-      };
-
-      try {
-        await post("/user/update-profile", profileData);
-      } catch {
-        console.log("Backend unavailable, saved locally only");
-      }
-
-      setUserData(profileData);
+      });
       setIsEditing(false);
-      alert("Profile updated successfully!");
-    } catch (e) {
-      console.error("Error saving profile:", e);
-      alert("Failed to save profile.");
+      alert("Profile updated");
+    } catch (err) {
+      console.error("Save failed", err);
+      alert("Failed to save profile");
     } finally {
       setSaveLoading(false);
     }
   }
 
-  function handleCancelEdit() {
-    if (userData) updateFormData(userData);
-    setIsEditing(false);
-  }
-
   if (loading) {
     return (
       <Layout>
-        <p style={{ padding: "2rem" }}>Loading profile...</p>
+        <p style={{ padding: "2rem" }}>Loading profile…</p>
       </Layout>
     );
   }
@@ -990,9 +961,9 @@ export default function UserProfile() {
       <div className="user-profile-container">
         <h2>My Profile</h2>
 
-        {!isEditing ? (
+        {!isEditing && (
           <button onClick={() => setIsEditing(true)}>Edit Profile</button>
-        ) : null}
+        )}
 
         {isEditing && (
           <div className="card">
@@ -1002,22 +973,31 @@ export default function UserProfile() {
               onChange={handleInputChange}
               placeholder="Name"
             />
+
             <input
               name="email"
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Email"
             />
+
             <input type="file" accept="image/*" onChange={handleImageChange} />
 
             <button onClick={handleSaveProfile} disabled={saveLoading}>
-              {saveLoading ? "Saving..." : "Save"}
+              {saveLoading ? "Saving…" : "Save"}
             </button>
-            <button onClick={handleCancelEdit}>Cancel</button>
+
+            <button onClick={() => setIsEditing(false)}>Cancel</button>
+          </div>
+        )}
+
+        {!isEditing && userData && (
+          <div className="card">
+            <p><strong>Name:</strong> {formData.name}</p>
+            <p><strong>Email:</strong> {formData.email}</p>
           </div>
         )}
       </div>
     </Layout>
   );
 }
-
