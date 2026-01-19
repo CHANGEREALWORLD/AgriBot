@@ -267,6 +267,9 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
+
 import ProtectedRoute from "./components/ProtectedRoute";
 import AuthRedirect from "./components/AuthRedirect";
 
@@ -294,8 +297,12 @@ export default function App() {
 
       <Route path="/forgot-password" element={<ForgotPassword />} />
 
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms" element={<Terms />} />
+
       {/* ROOT */}
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
+
 
       {/* PROTECTED ROUTES WITH LAYOUT */}
       <Route
