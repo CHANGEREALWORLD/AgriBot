@@ -254,6 +254,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 import Layout from "./layout/Layout";
 
+import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import CropRecommend from "./pages/CropRecommend";
 import YieldPredict from "./pages/YieldPredict";
@@ -301,8 +302,8 @@ export default function App() {
       <Route path="/terms" element={<Terms />} />
 
       {/* ROOT */}
-      <Route path="/" element={<Navigate to="/dashboard" replace />} />
-
+      {/* <Route path="/" element={<Navigate to="/dashboard" replace />} /> */}
+      <Route path="/" element={<Home />} />
 
       {/* PROTECTED ROUTES WITH LAYOUT */}
       <Route
