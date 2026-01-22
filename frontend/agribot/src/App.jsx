@@ -131,9 +131,10 @@ export default function App() {
 
       <Route path="/forgot-password" element={<ForgotPassword />} />
 
-      {/* ---------- PROTECTED ROUTES ---------- */}
+      {/* ---------- PROTECTED ROUTES ---------- */}  
+      {/* i added dashboard here */}
       <Route
-        path="/"
+        path="/dashboard"
         element={
           <ProtectedRoute>
             <Dashboard />
@@ -204,7 +205,8 @@ export default function App() {
 
 
       {/* ---------- FALLBACK ---------- */}
-      <Route path="*" element={<Navigate to="/" />} />
+       {/* i added dashboard here */}
+      <Route path="*" element={<Navigate to="/dashboard" />} />
 
     </Routes>
   );

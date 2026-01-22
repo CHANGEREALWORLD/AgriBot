@@ -1,5 +1,5 @@
 // src/utils/authApi.js
-const BASE_URL = "http://127.0.0.1:8000";
+const BASE_URL = "https://agribot-5u3t.onrender.com";
 
 function getToken() {
   return localStorage.getItem("token");
