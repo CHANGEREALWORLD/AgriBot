@@ -1,3 +1,49 @@
+// // src/components/ChartCard.jsx
+// import Card from "./Card";
+// import {
+//   Chart as ChartJS,
+//   CategoryScale,
+//   LinearScale,
+//   PointElement,
+//   LineElement,
+//   Tooltip,
+//   Legend
+// } from "chart.js";
+// import { Line } from "react-chartjs-2";
+
+// ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend);
+
+// export default function ChartCard() {
+//   const data = {
+//     labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+//     datasets: [
+//       {
+//         label: "Predicted Yield (kg)",
+//         data: [120, 135, 150, 140, 160, 180, 200],
+//         fill: true,
+//         tension: 0.4
+//       }
+//     ]
+//   };
+
+//   const options = {
+//     plugins: { legend: { display: false } },
+//     maintainAspectRatio: false,
+//     scales: {
+//       y: { beginAtZero: true }
+//     }
+//   };
+
+//   return (
+//     <Card className="chart-card">
+//       <h4 className="card-title">Weekly Yield Prediction</h4>
+//       <div style={{ height: 220 }}>
+//         <Line data={data} options={options} />
+//       </div>
+//     </Card>
+//   );
+// }
+
 // src/components/ChartCard.jsx
 import { useState, useEffect } from "react";
 import Card from "./Card";

@@ -29,7 +29,7 @@ export function SoilHealthCard({
     } else {
       // Default action - navigate to soil health page
       alert("View Full Soil Health Report\n\nThis would navigate to a detailed soil analysis page.");
-
+      // In real app: navigate('/soil-health');
     }
   };
 
@@ -104,6 +104,7 @@ export function CropRecommendationCard({
     } else {
       // Default action
       alert(`Getting Planting Guide for ${crop}\n\nThis would show:\n• Best planting time\n• Soil preparation\n• Watering schedule\n• Expected harvest time`);
+      // In real app: navigate('/planting-guide/' + crop);
     }
   };
 

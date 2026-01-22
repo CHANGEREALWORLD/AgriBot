@@ -3,6 +3,6 @@ export function getCurrentUserId() {
   if (!raw) return null;
 
   const user = JSON.parse(raw);
-  return user.sub || user.email; 
+  return user.sub || user.email; // sub preferred
 }
 

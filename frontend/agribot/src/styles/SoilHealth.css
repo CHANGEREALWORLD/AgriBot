@@ -1,6 +1,9 @@
+/* ===============================================
+   SOIL HEALTH ANALYSIS PAGE - SoilHealth.css
+   Save this as: src/styles/SoilHealth.css
+   =============================================== */
 
-
-/*  PAGE HEADER  */
+/* ================= PAGE HEADER ================= */
 .soil-health-page h2 {
   font-size: 32px;
   font-weight: 700;
@@ -16,7 +19,7 @@
   font-size: 36px;
 }
 
-/*  MAIN GRID LAYOUT  */
+/* ================= MAIN GRID LAYOUT ================= */
 .soil-health-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -24,7 +27,7 @@
   align-items: start;
 }
 
-/*  FORM CARD  */
+/* ================= FORM CARD ================= */
 .soil-form-card {
   background: #fff;
   border-radius: 16px;
@@ -59,7 +62,7 @@
   border-radius: 2px;
 }
 
-/*  FORM GROUPS  */
+/* ================= FORM GROUPS ================= */
 .soil-form-group {
   margin-bottom: 20px;
 }
@@ -74,7 +77,7 @@
   letter-spacing: 0.05em;
 }
 
-/*  INPUTS & SELECT */
+/* ================= INPUTS & SELECT ================= */
 .soil-form-group select,
 .soil-form-group input {
   width: 100%;
@@ -104,12 +107,10 @@
   color: #9ca3af;
 }
 
-/*  SELECT DROPDOWN */
+/* ================= SELECT DROPDOWN ================= */
 .soil-form-group select {
   cursor: pointer;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsPSIjMmU3ZDMyIiBkPSJNOCwxMUwzLDZoMTB6Ii8+PC9zdmc+");
-
-  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%232e7d32' d='M8 11L3 6h10z'/%3E%3C/svg%3E"); */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%232e7d32' d='M8 11L3 6h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
   background-size: 16px;
@@ -119,7 +120,7 @@
   -moz-appearance: none;
 }
 
-/*  NPK GRID */
+/* ================= NPK GRID ================= */
 .npk-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -127,7 +128,7 @@
   margin-bottom: 20px;
 }
 
-/*  MOISTURE & PH GRID  */
+/* ================= MOISTURE & PH GRID ================= */
 .moisture-ph-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -135,7 +136,7 @@
   margin-bottom: 24px;
 }
 
-/*  ANALYZE BUTTON  */
+/* ================= ANALYZE BUTTON ================= */
 .analyze-btn {
   width: 100%;
   background: linear-gradient(135deg, #2e7d32 0%, #145a32 100%);
@@ -168,7 +169,7 @@
   cursor: not-allowed;
 }
 
-/* ERROR MESSAGE  */
+/* ================= ERROR MESSAGE ================= */
 .soil-error-message {
   margin-top: 16px;
   padding: 14px 18px;
@@ -188,7 +189,7 @@
   font-size: 18px;
 }
 
-/*  RESULT CARD  */
+/* ================= RESULT CARD ================= */
 .soil-result-card {
   background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
   border-radius: 16px;
@@ -210,7 +211,7 @@
   }
 }
 
-/*  HEALTH STATUS */
+/* ================= HEALTH STATUS ================= */
 .health-status {
   text-align: center;
   padding: 24px;
@@ -254,7 +255,7 @@
   color: #dc2626;
 }
 
-/*  CONFIDENCE SECTION  */
+/* ================= CONFIDENCE SECTION ================= */
 .confidence-section {
   margin-bottom: 28px;
   padding: 20px;
@@ -324,7 +325,7 @@
   }
 }
 
-/* REASONS SECTION */
+/* ================= REASONS SECTION ================= */
 .reasons-section {
   margin-bottom: 28px;
   padding: 20px;
@@ -378,7 +379,7 @@
   margin-top: 2px;
 }
 
-/* SUGGESTIONS SECTION  */
+/* ================= SUGGESTIONS SECTION ================= */
 .suggestions-section {
   margin-bottom: 28px;
   padding: 20px;
@@ -429,7 +430,7 @@
   flex-shrink: 0;
 }
 
-/* INPUT SUMMARY SECTION */
+/* ================= INPUT SUMMARY SECTION ================= */
 .input-summary-section {
   padding: 20px;
   background: #fff;
@@ -470,7 +471,7 @@
   font-weight: 600;
 }
 
-/*  PLACEHOLDER  */
+/* ================= PLACEHOLDER ================= */
 .result-placeholder {
   text-align: center;
   padding: 80px 20px;
@@ -489,7 +490,7 @@
   font-style: italic;
 }
 
-/* RESPONSIVE  */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
   .soil-health-grid {
     grid-template-columns: 1fr;
